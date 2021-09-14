@@ -34,9 +34,9 @@ public class Rows : MonoBehaviour
         timeInterval = 0.025f;
         for (int i = 0; i < 30; ++i)
         {
-            if (transform.position.y <= -3.5f)
-                transform.position = new Vector2(transform.position.x, 0.70f);
-            transform.position = new Vector2(transform.position.x, transform.position.y - 0.30f);
+            if (transform.position.y <= -2.75f)
+                transform.position = new Vector2(transform.position.x, 1.45f);
+            transform.position = new Vector2(transform.position.x, transform.position.y - 0.60f);
             yield return new WaitForSeconds(timeInterval);
         }
 
@@ -53,9 +53,9 @@ public class Rows : MonoBehaviour
 
         for (int i = 0; i < randomValue; ++i)
         {
-            if (transform.position.y <= -3.5f)
-                transform.position = new Vector2(transform.position.x, 0.70f);
-            transform.position = new Vector2(transform.position.x, transform.position.y - 0.30f);
+            if (transform.position.y <= -2.75f)
+                transform.position = new Vector2(transform.position.x, 1.45f);
+            transform.position = new Vector2(transform.position.x, transform.position.y - 0.60f);
 
             if (i > Mathf.RoundToInt(randomValue * 0.25f))
                 timeInterval = 0.05f;
@@ -66,36 +66,40 @@ public class Rows : MonoBehaviour
             if (i > Mathf.RoundToInt(randomValue * 0.95f))
                 timeInterval = 0.2f;
             yield return new WaitForSeconds(timeInterval);
+            
         }
-
-        if (transform.position.y == -3.5f)
+        
+        
+        if (transform.position.y == -2.75f)
         {
             stoppedSlot = "Diamond";
         }
-        else if (transform.position.y == -2.9f)
+        else if (transform.position.y == -2.15f)
         {
             stoppedSlot = "Crown";
         }
-        else if (transform.position.y == -2.3f)
+        else if (transform.position.y == -1.55f)
         {
             stoppedSlot = "Melon";
         }
-        else if (transform.position.y == -1.7f)
+        else if (transform.position.y == -0.95f)
         {
             stoppedSlot = "Bar";
-        }else if (transform.position.y == -1.1f)
+        }else if (transform.position.y == -0.36f)
         {
             stoppedSlot = "Seven";
-        }else if (transform.position.y == -0.5f)
+        }else if (transform.position.y == 0.25f)
         {
             stoppedSlot = "Cherry";
-        }else if (transform.position.y == 0.1f)
+        }else if (transform.position.y == 0.85f)
         {
             stoppedSlot = "Lemon";
-        }else if (transform.position.y == 0.7f)
+        }else if (transform.position.y == 1.45f)
         {
             stoppedSlot = "Diamond";
         }
+
+        rowStopped = true;
     }
 
     private void OnDestroy()
